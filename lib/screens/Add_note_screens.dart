@@ -9,7 +9,6 @@ class AddNotesScreen extends StatefulWidget {
 }
 
 class _AddNotesScreenState extends State<AddNotesScreen> {
-  final _formkey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return SafeArea(
