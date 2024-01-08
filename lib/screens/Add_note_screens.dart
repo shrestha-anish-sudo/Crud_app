@@ -151,6 +151,24 @@ class _AddNotesScreenState extends State<AddNotesScreen> {
                                 // ),
                               ),
                             ),
+                            Container(
+                              margin: EdgeInsets.symmetric(vertical: 20),
+                              height: 60,
+                              width: double.infinity,
+                              decoration: BoxDecoration(
+                                color: Theme.of(context).primaryColor,
+                                borderRadius: BorderRadius.circular(30),
+
+                              ),
+                              child: ElevatedButton(onPressed: (){
+
+                              }, child: Text(
+                                btnText,style: TextStyle(
+                                  fontSize: 30,
+                                  color: Colors.white
+                                ),
+                              )),
+                            )
                           ],
                         ),
                       ),
