@@ -1,6 +1,9 @@
+import 'package:crud_app/Database/Database.dart';
+import 'package:crud_app/Models/Note_models.dart';
 import 'package:crud_app/screens/Add_note_screens.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -10,6 +13,18 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  late Future<List<Note>> _notelist;
+  final DateFormat _dateFormatter = DateFormat('MMM DD, YYYY');
+  DatabaseHelper _databaseHelper = DatabaseHelper.instance;
+  void initstate() {
+    _updateNoteList();
+    super.initState();
+  }
+
+  _updateNoteList() {
+    _notelist = DatabaseHelper.instance.getNoteList();
+  }
+
   Widget _buildnotes(int index) {
     return Padding(
       padding: const EdgeInsets.symmetric(
